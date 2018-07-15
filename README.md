@@ -1,2 +1,2 @@
 # tfprogs
-useful programs for tensorflow
+useful programs for tensorflow-1.7.0
