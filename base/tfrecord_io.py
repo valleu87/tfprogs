@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('mnist_data', dtype=tf.uint8, one_hot=True)
+mnist = input_data.read_data_sets('mnist_ds', dtype=tf.uint8, one_hot=True)
 train_images = mnist.train.images    # (55000, 784)
 train_labels = mnist.train.labels    # (55000, 10)
 train_count = mnist.train.num_examples    # 55000
@@ -33,11 +33,11 @@ def create_record(save_path, images, labels, count):
         writer.write(example.SerializeToString())
     writer.close()
 
-train_path = 'mnist_data/train.record'
+train_path = 'mnist_ds/train.record'
 create_record(train_path, train_images, train_labels, train_count)
-val_path = 'mnist_data/val.record'
+val_path = 'mnist_ds/val.record'
 create_record(val_path, val_images, val_labels, val_count)
-test_path = 'mnist_data/test.record'
+test_path = 'mnist_ds/test.record'
 create_record(test_path, test_images, test_labels, test_count)
 
 # read one example at one time
