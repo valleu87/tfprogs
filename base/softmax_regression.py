@@ -7,8 +7,8 @@ COLUMN_NAMES = ['SepalLength', 'SepalWidth',
 SPECIES = ['Setosa', 'Versicolor', 'Virginica']
 ONE_HOT_CODE = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 
-train_path = "iris_data/iris_training.csv"
-test_path = "iris_data/iris_test.csv"
+train_path = "../data/iris/iris_training.csv"
+test_path = "../data/iris/iris_test.csv"
 
 train_df = pd.read_csv(train_path, names=COLUMN_NAMES, header=0)
 train_n = train_df.shape[0]
